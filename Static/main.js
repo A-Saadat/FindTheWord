@@ -1,20 +1,13 @@
-let qu = (selector) => {
-    return document.querySelector([selector]);
-}
-let count;
+let qu = (selector) => document.querySelector([selector]);
 let Interval = (selector) => {
-
     let t = setInterval(() => {
         i--;
         selector.innerHTML = i;
-
         if(i == 0){
             i = 60;
         }
-
     }, 1000);
 }
-
 let Interval2 = (selector) => {
     let t1 = setInterval(() => {
         j--;
@@ -38,7 +31,8 @@ let strat_game = qu('.start').addEventListener('click', () => {
     Interval2(qu('.min'))
     qu('.start').classList.add('go_out')
     qu('.timer').classList.add('go_up')
-}) 
+    qu('.title1').classList.add('open')
+})
 
 let strat_game2 = qu('.start2').addEventListener('click', () => {
     i = 60, j = 4;
@@ -50,6 +44,7 @@ let strat_game2 = qu('.start2').addEventListener('click', () => {
     Interval2(qu('.min2'))
     qu('.start2').classList.add('go_out')
     qu('.timer2').classList.add('go_up')
+    qu('.title2').classList.add('open')
 })
 
 let strat_game3 = qu('.start3').addEventListener('click', () => {
@@ -62,6 +57,7 @@ let strat_game3 = qu('.start3').addEventListener('click', () => {
     Interval2(qu('.min3'))
     qu('.start3').classList.add('go_out')
     qu('.timer3').classList.add('go_up2')
+    qu('.title3').classList.add('open')
 })  
 
 qu('.next').addEventListener('click', () => {
@@ -72,5 +68,13 @@ qu('.next').addEventListener('click', () => {
 qu('#next2').addEventListener('click', () => {
     qu('.container3').classList.toggle('open');
     qu('body').classList.toggle('change_bg2');
+})
+
+qu('.info').addEventListener('click', () => {
+    qu('.dstp').classList.add('open')
+
+    setTimeout(() => {
+        qu('.dstp').classList.remove('open')
+    }, 10000)
 })
 
