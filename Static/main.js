@@ -1,44 +1,76 @@
-let strat_btn = document.querySelector('.start');
-let seconds = document.querySelector('.sec');
-let minutes = document.querySelector('.min');
-let next = document.querySelector('#next');
-let pre = document.querySelector('#pre2');
-let cont2 = document.querySelector('.container2');
-let body = document.querySelector('body')
+let qu = (selector) => {
+    return document.querySelector([selector]);
+}
+let count;
+let Interval = (selector) => {
 
-let i = 0, j = 0;
-
-function Interval(index, value, num, limit){
     let t = setInterval(() => {
-        index++;
-        value.innerHTML = index;
+        i--;
+        selector.innerHTML = i;
 
-        if(index >= limit){
-            index = -1;
+        if(i == 0){
+            i = 60;
         }
 
-        if(j >= 4){
-            clearInterval(t);
-        }
-
-    }, num);
+    }, 1000);
 }
 
-let strat_game = strat_btn.addEventListener('click', () => {
-    Interval(i, seconds, 1000, 59)
-    Interval(j, minutes, (1000 * 61), 4)
+let Interval2 = (selector) => {
+    let t1 = setInterval(() => {
+        j--;
+        selector.innerHTML = j;
+
+        if(j == 0){
+            clearInterval(t1)
+        }
+
+    }, 1000 * 61);
+}
+
+let i = 60, j = 4;
+
+let strat_game = qu('.start').addEventListener('click', () => {
+    setTimeout(() => {
+        qu('.min').innerHTML = 4;
+    }, 1000);
+
+    Interval(qu('.sec'));
+    Interval2(qu('.min'))
+    qu('.start').classList.add('go_out')
+    qu('.timer').classList.add('go_up')
+}) 
+
+let strat_game2 = qu('.start2').addEventListener('click', () => {
+    i = 60, j = 4;
+    setTimeout(() => {
+        qu('.min2').innerHTML = 4;
+    }, 1000);
+
+    Interval(qu('.sec2'));
+    Interval2(qu('.min2'))
+    qu('.start2').classList.add('go_out')
+    qu('.timer2').classList.add('go_up')
+})
+
+let strat_game3 = qu('.start3').addEventListener('click', () => {
+    i = 60, j = 4
+    setTimeout(() => {
+        qu('.min3').innerHTML = 4;
+    }, 1000);
+
+    Interval(qu('.sec3'));
+    Interval2(qu('.min3'))
+    qu('.start3').classList.add('go_out')
+    qu('.timer3').classList.add('go_up2')
 })  
 
-next.addEventListener('click', () => {
-    cont2.classList.toggle('open');
-    body.classList.toggle('change_bg')
+qu('.next').addEventListener('click', () => {
+    qu('.container2').classList.toggle('open');
+    qu('body').classList.toggle('change_bg');
 })
 
-pre.addEventListener('click', () => {
-    cont2.classList.remove('open');
-    cont2.classList.add('close');
-    body.classList.remove('change_bg')
-    body.classList.add('pre_bg')
+qu('#next2').addEventListener('click', () => {
+    qu('.container3').classList.toggle('open');
+    qu('body').classList.toggle('change_bg2');
 })
-
 

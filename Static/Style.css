@@ -25,6 +25,7 @@ body{
     margin: 2rem;
 }
 
+
 .input_group{
     display: flex;
     flex-wrap: wrap;
@@ -94,7 +95,9 @@ body{
     box-shadow: 0 0 0 3px #A5B4FC;
 }
 
-.timer{
+.timer,
+.timer2,
+.timer3{
     display: flex;
     justify-content: center;
     gap: 1rem;
@@ -119,7 +122,9 @@ body{
     background-color: #7F1D1D;
 }
 
-.sec, .min{
+.sec, .min,
+.sec2, .min2,
+.sec3, .min3{
     padding: 2.5rem;
     margin-top: 5rem;
     font-size: 2rem;
@@ -134,9 +139,32 @@ body{
 }
 
 
-.container2{
+.container2, .container3{
     position: absolute;
     top: 31px;
+    width: 100%;
+    margin-top: 0;
+    padding: 0 5rem;
+}
+
+.container2{
+    background: url(./img/bg-pattern2-low.png) #312E81;
+    transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    -moz-transform: translateX(100%);
+    -ms-transform: translateX(100%);
+    -o-transform: translateX(100%);
+    background-size: 40rem;
+    transition: transform 500ms ease;
+    -webkit-transition: transform 500ms ease;
+    -moz-transition: transform 500ms ease;
+    -ms-transition: transform 500ms ease;
+    -o-transition: transform 500ms ease;
+}
+
+.container3{
+    background: url(./img/bg-pattern2-low.png) #365314;
+    background-size: 40rem;
     transform: translateX(100%);
     -webkit-transform: translateX(100%);
     -moz-transform: translateX(100%);
@@ -147,11 +175,15 @@ body{
     -moz-transition: transform 500ms ease;
     -ms-transition: transform 500ms ease;
     -o-transition: transform 500ms ease;
-    background: url(./img/bg-pattern2-low.png) #312E81;
-    background-size: 40rem;
-    width: 100%;
-    margin-top: 0;
-    padding: 0 5rem;
+}
+
+.change_bg2{
+    background: url(./img/bg-pattern2-low.png) #365314 !important;
+    background-size: 40rem !important;
+}
+
+.third{
+    padding-bottom: 10rem;
 }
 
 .open{
@@ -170,8 +202,27 @@ body{
     -o-transform: translateX(100%);
 }
 
-.pre_bg{
-    background: url(./img/bg-pattern2-low.png) #7D8CC4;
-    background-size: 40rem;
+.go_out{
+    transform: translatex(-1000%);
+    -webkit-transform: translatex(-1000%);
+    -moz-transform: translatex(-1000%);
+    -ms-transform: translatex(-1000%);
+    -o-transform: translatex(-1000%);
+}
+
+.go_up{
+    transform: translateY(-60%);
+    -webkit-transform: translateY(-60%);
+    -moz-transform: translateY(-60%);
+    -ms-transform: translateY(-60%);
+    -o-transform: translateY(-60%);
+}
+
+.go_up2{
+    transform: translateY(-40%);
+    -webkit-transform: translateY(-40%);
+    -moz-transform: translateY(-40%);
+    -ms-transform: translateY(-40%);
+    -o-transform: translateY(-40%);
 }
 
